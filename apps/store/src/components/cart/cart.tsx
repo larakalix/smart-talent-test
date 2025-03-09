@@ -1,12 +1,16 @@
-import React from "react";
-import { useAuthStore } from "../../stores/auth-store";
+import { Button } from "@acme/ui/components";
+import { CartProvider } from "../../providers/cart-provider";
+import { useCartStore } from "../../stores/cart-store";
+import { NavLink } from "react-router-dom";
 
 export const Cart = () => {
-    const { isClientAuthenticated } = useAuthStore((state) => state);
+    const { getTotal } = useCartStore((state) => state);
 
-    if (!isClientAuthenticated()) {
-        return null;
-    }
+    const total = getTotal();
 
-    return <div>Cart</div>;
+    return (
+        <CartProvider>
+            <NavLink to="/cart">View my cart ({total.total})</NavLink>
+        </CartProvider>
+    );
 };
