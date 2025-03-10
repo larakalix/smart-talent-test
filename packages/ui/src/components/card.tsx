@@ -5,7 +5,7 @@ export type CardProps = ComponentProps<"div"> & {
     children?: React.ReactNode;
 };
 
-export function Card({ className, children }: CardProps): React.ReactNode {
+export function Card({ className, children }: CardProps): JSX.Element {
     return (
         <div
             className={cn(

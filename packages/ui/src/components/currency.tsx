@@ -9,7 +9,7 @@ export function Currency({
     currency = "USD",
     className,
     price,
-}: Props): React.ReactNode {
+}: Props): JSX.Element {
     return (
         <span className={className}>
             {new Intl.NumberFormat("en-US", {

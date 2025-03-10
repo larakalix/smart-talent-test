@@ -1,6 +1,6 @@
-import type { Product } from "../../types/product";
+import type { Product } from "../../../types/product";
 import { Card } from "@acme/ui/components";
-import { ProductCardProvider } from "../../providers/product-card-provider";
+import { ProductCardProvider } from "../../../providers/product-card-provider";
 import { ProductCartInfo } from "./product-info";
 import { ProductCardActions } from "./actions";
 

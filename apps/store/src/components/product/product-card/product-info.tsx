@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ProductCardContext } from "../../providers/product-card-provider";
+import { ProductCardContext } from "../../../providers/product-card-provider";
 import { Currency } from "@acme/ui/components";
 
 export const ProductCartInfo = () => {

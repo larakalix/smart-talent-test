@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { Button } from "@acme/ui/components";
-import { ProductCardContext } from "../../providers/product-card-provider";
+import { ProductCardContext } from "../../../providers/product-card-provider";
 import { useProductCard } from "./hooks/use-product-card";
-import { Product } from "../../types/product";
+import { Product } from "../../../types/product";
 
 export const ProductCardActions = () => {
     const { product } = useContext(ProductCardContext);

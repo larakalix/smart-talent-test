@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MainLayout } from "../components/layout/main-layout";
-import { HomePage } from "../pages/common/home/home-page";
+import { HomePage } from "../pages/client/home/home-page";
 import { ProtectedRoute } from "../components/layout/protected-route";
 import { OrdersPage } from "../pages/admin/orders-page";
 import { OrdeDetailPage } from "../pages/admin/order-detail-page";

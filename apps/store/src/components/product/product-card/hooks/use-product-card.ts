@@ -1,7 +1,7 @@
 import { toast } from "sonner";
-import { useAuthStore } from "../../../stores/auth-store";
-import { useCartStore } from "../../../stores/cart-store";
-import type { Product } from "../../../types/product";
+import { useAuthStore } from "../../../../stores/auth-store";
+import { useCartStore } from "../../../../stores/cart-store";
+import type { Product } from "../../../../types/product";
 
 export const useProductCard = () => {
     const { isClientAuthenticated } = useAuthStore((state) => state);
