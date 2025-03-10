@@ -1,3 +1,4 @@
+import { OrderForm } from "../../components/checkout/order-form";
 import { Container } from "../../components/layout/container";
 
 export const CheckoutPage = () => {
@@ -9,6 +10,8 @@ export const CheckoutPage = () => {
                         Checkout
                     </h1>
                 </header>
+
+                <OrderForm />
             </div>
         </Container>
     );
