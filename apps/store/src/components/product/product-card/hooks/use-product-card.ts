@@ -5,7 +5,7 @@ import type { Product } from "../../../../types/product";
 
 export const useProductCard = () => {
     const { isClientAuthenticated } = useAuthStore((state) => state);
-    const { addToCart } = useCartStore((state) => state);
+    const { addToCart, cartHasProduct } = useCartStore((state) => state);
 
     const handleAddToCart = (product: Product) => {
         addToCart(product);
@@ -15,5 +15,5 @@ export const useProductCard = () => {
 
     const allowPurchase = isClientAuthenticated();
 
-    return { allowPurchase, handleAddToCart };
+    return { allowPurchase, cartHasProduct, handleAddToCart };
 };

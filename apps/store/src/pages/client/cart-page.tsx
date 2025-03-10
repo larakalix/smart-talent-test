@@ -6,11 +6,12 @@ import { useCartStore } from "../../stores/cart-store";
 
 export const CartPage = () => {
     const { products } = useCartStore((state) => state);
+    const isEmpty = products?.length === 0;
 
     return (
         <Container className="p-6 flex flex-col">
             <div className="mx-auto max-w-3xl">
-                <header className="text-center">
+                <header className="text-center pb-8">
                     <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">
                         Your Cart
                     </h1>
@@ -24,18 +25,26 @@ export const CartPage = () => {
                                 product={product}
                             />
                         ))}
+
+                        {isEmpty && (
+                            <li className="text-center text-gray-600">
+                                Your cart is empty.
+                            </li>
+                        )}
                     </ul>
 
                     <CartSummary />
 
-                    <div className="w-full mt-8 flex justify-end">
-                        <NavLink
-                            to="/checkout"
-                            className="block rounded-md bg-blue-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-600"
-                        >
-                            Checkout
-                        </NavLink>
-                    </div>
+                    {!isEmpty && (
+                        <div className="w-full mt-8 flex justify-end">
+                            <NavLink
+                                to="/checkout"
+                                className="block rounded-md bg-blue-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-600"
+                            >
+                                Checkout
+                            </NavLink>
+                        </div>
+                    )}
                 </div>
             </div>
         </Container>

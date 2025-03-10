@@ -14,12 +14,24 @@ type StateProps = {
         total: number;
         totalTaxes: number;
     };
+    cartHasProduct: (id: string, max: number) => boolean;
+    clean: () => void;
 };
 
 export const useCartStore = create<StateProps>()(
     persist(
         (set, get) => ({
             products: [],
+            clean: () => set({ products: [] }),
+            cartHasProduct: (id: string, max: number) => {
+                const product = get().products.find(
+                    (product) => product.id === id
+                );
+
+                if (!product) return false;
+
+                return product.quantity === max;
+            },
             addToCart: (item) => {
                 const product = get().products.find(
                     (product) => product.id === item.id

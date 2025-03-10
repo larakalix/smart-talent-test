@@ -8,9 +8,10 @@ export const ProductGrid = () => {
     return (
         <LoadProvider isLoading={isLoading} error={error}>
             <div className="grid grid-cols-4 gap-4 w-full">
-                {products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
+                {products &&
+                    products.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))}
             </div>
         </LoadProvider>
     );

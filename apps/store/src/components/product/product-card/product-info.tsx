@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { ProductCardContext } from "../../../providers/product-card-provider";
 import { Currency } from "@acme/ui/components";
+import type { Product } from "../../../types/product";
 
 export const ProductCartInfo = () => {
-    const { product } = useContext(ProductCardContext);
+    const { product } = useContext(ProductCardContext) as {
+        product: Product;
+    };
 
     return (
         <>
@@ -17,6 +20,10 @@ export const ProductCartInfo = () => {
 
             <div>
                 <dd className="font-medium">{product.name}</dd>
+            </div>
+
+            <div>
+                <dd className="text-xs font-medium">Stock: {product.stock}</dd>
             </div>
         </>
     );

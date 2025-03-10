@@ -7,12 +7,15 @@ import { useOrderStore } from "../../../../stores/order-store";
 import { Order, OrderFormValues } from "../../../../types/order";
 import { useCartStore } from "../../../../stores/cart-store";
 import { useNavigate } from "react-router-dom";
+import { useProductStore } from "../../../../stores/product-store";
 
 export const useOrderForm = () => {
     const [, startTransition] = useTransition();
     const navigate = useNavigate();
+
     const { user } = useAuthStore((state) => state);
-    const { getSummary } = useCartStore((state) => state);
+    const { updateStock } = useProductStore((state) => state);
+    const { products, getSummary, clean } = useCartStore((state) => state);
     const { addOrder } = useOrderStore((state) => state);
 
     const { data, error, isLoading } = useQuery({
@@ -41,13 +44,22 @@ export const useOrderForm = () => {
                     id: Math.random().toString(36).substr(2, 9),
                     total: total + totalTaxes,
                     createdAt: new Date().toISOString(),
-                    products: [],
+                    products: products.map((product) => ({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price,
+                        tax: product.tax,
+                        quantity: product.quantity,
+                    })),
                 };
 
                 addOrder(order);
-
                 toast.success("Order placed successfully!");
 
+                products.forEach(({ id, quantity }) =>
+                    updateStock(id, quantity)
+                );
+                clean();
                 navigate("/");
             });
         } catch (error) {
