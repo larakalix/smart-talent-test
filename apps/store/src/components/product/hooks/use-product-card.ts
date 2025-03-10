@@ -1,12 +1,16 @@
-/* eslint-disable no-empty-pattern */
+import { toast } from "sonner";
 import { useAuthStore } from "../../../stores/auth-store";
+import { useCartStore } from "../../../stores/cart-store";
 import type { Product } from "../../../types/product";
 
-export const useProductCard = ({}: { product: Product }) => {
+export const useProductCard = () => {
     const { isClientAuthenticated } = useAuthStore((state) => state);
+    const { addToCart } = useCartStore((state) => state);
 
     const handleAddToCart = (product: Product) => {
-        console.log("Add to cart", product);
+        addToCart(product);
+
+        toast.success("Product added to cart");
     };
 
     const allowPurchase = isClientAuthenticated();

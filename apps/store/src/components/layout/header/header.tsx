@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Container } from "../container";
-import { Cart } from "../../cart/cart";
+import { HeaderCartBox } from "../../cart/header-cart-box";
 import { Logo } from "../logo";
 import { Button } from "@acme/ui/components";
 import { useHeader } from "./hooks/use-header";
@@ -33,7 +33,7 @@ export const Header = () => {
                     </nav>
 
                     <div className="flex items-center gap-4">
-                        <Cart />
+                        <HeaderCartBox />
 
                         <div className="sm:flex sm:gap-4">
                             <NavLink

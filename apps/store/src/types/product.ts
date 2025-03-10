@@ -11,6 +11,6 @@ export const productSchema = z.object({
 
 export type Product = z.infer<typeof productSchema>;
 
-export type CartProduct = Pick<Product, "id" | "name" | "price"> & {
+export type CartProduct = Pick<Product, "id" | "name" | "price" | "tax"> & {
     quantity: number;
 };

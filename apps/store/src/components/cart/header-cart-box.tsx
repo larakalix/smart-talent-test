@@ -1,9 +1,8 @@
-import { Button } from "@acme/ui/components";
 import { CartProvider } from "../../providers/cart-provider";
 import { useCartStore } from "../../stores/cart-store";
 import { NavLink } from "react-router-dom";
 
-export const Cart = () => {
+export const HeaderCartBox = () => {
     const { getTotal } = useCartStore((state) => state);
 
     const total = getTotal();

@@ -10,6 +10,10 @@ type StateProps = {
         total: number;
         quantity: number;
     };
+    getSummary: () => {
+        total: number;
+        totalTaxes: number;
+    };
 };
 
 export const useCartStore = create<StateProps>()(
@@ -64,6 +68,18 @@ export const useCartStore = create<StateProps>()(
                     }),
                     { total: 0, quantity: 0 }
                 ),
+            getSummary: () => {
+                const products = get().products;
+
+                return products.reduce(
+                    (acc, { price, tax, quantity }) => {
+                        acc.total += price * quantity;
+                        acc.totalTaxes += tax * quantity;
+                        return acc;
+                    },
+                    { total: 0, totalTaxes: 0 }
+                );
+            },
         }),
         {
             name: "cart-storage",

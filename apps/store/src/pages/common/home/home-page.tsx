@@ -1,6 +1,6 @@
 import { StoreGreeting } from "../../../components/home/home-greet";
 import { Container } from "../../../components/layout/container";
-import { ProductCard } from "../../../components/product/product-card";
+import { ProductCard } from "../../../components/product";
 import { useProductStore } from "../../../stores/product-store";
 
 export const HomePage = () => {
