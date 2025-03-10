@@ -3,7 +3,6 @@ import { MainLayout } from "../components/layout/main-layout";
 import { HomePage } from "../pages/client/home/home-page";
 import { ProtectedRoute } from "../components/layout/protected-route";
 import { OrdersPage } from "../pages/admin/orders-page";
-import { OrdeDetailPage } from "../pages/admin/order-detail-page";
 import { CartPage } from "../pages/client/cart-page";
 import { CheckoutPage } from "../pages/client/checkout-page";
 import { AuthPage } from "../pages/auth/auth-page";
@@ -13,9 +12,7 @@ export const RouteProvider = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<MainLayout />}>
-                    {/* <Route path="/" element={<HomePage />} /> */}
                     <Route path="/login" element={<AuthPage />} />
-                    {/* <Route path="/product/:id" element={<div>Product</div>} /> */}
 
                     {/* Client pages */}
                     <Route
@@ -51,15 +48,6 @@ export const RouteProvider = () => {
                         element={
                             <ProtectedRoute requiredRole="admin">
                                 <OrdersPage />
-                            </ProtectedRoute>
-                        }
-                    />
-
-                    <Route
-                        path="/orders/:id"
-                        element={
-                            <ProtectedRoute requiredRole="admin">
-                                <OrdeDetailPage />
                             </ProtectedRoute>
                         }
                     />
