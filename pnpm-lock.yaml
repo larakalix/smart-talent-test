@@ -50,10 +50,10 @@ importers:
         version: 8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)
       '@storybook/react-vite':
         specifier: ^8.2.6
-        version: 8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.35.0)(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.29.2))
+        version: 8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.35.0)(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)(vite@5.2.11(@types/node@22.13.10)(lightningcss@1.29.2))
       '@vitejs/plugin-react':
         specifier: ^4.2.1
-        version: 4.2.1(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.29.2))
+        version: 4.2.1(vite@5.2.11(@types/node@22.13.10)(lightningcss@1.29.2))
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -68,19 +68,37 @@ importers:
         version: 5.5.4
       vite:
         specifier: ^5.1.4
-        version: 5.2.11(@types/node@20.12.12)(lightningcss@1.29.2)
+        version: 5.2.11(@types/node@22.13.10)(lightningcss@1.29.2)
 
   apps/store:
     dependencies:
       '@acme/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@hookform/resolvers':
+        specifier: ^4.1.3
+        version: 4.1.3(react-hook-form@7.54.2(react@19.0.0))
+      '@radix-ui/react-label':
+        specifier: ^2.1.2
+        version: 2.1.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@radix-ui/react-slot':
+        specifier: ^1.1.2
+        version: 1.1.2(@types/react@19.0.10)(react@19.0.0)
       '@tailwindcss/vite':
         specifier: ^4.0.12
-        version: 4.0.12(vite@6.2.1(@types/node@20.12.12)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2))
+        version: 4.0.12(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2))
       '@tanstack/react-query':
         specifier: ^5.67.2
         version: 5.67.2(react@19.0.0)
+      class-variance-authority:
+        specifier: ^0.7.1
+        version: 0.7.1
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      lucide-react:
+        specifier: ^0.479.0
+        version: 0.479.0(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -96,9 +114,15 @@ importers:
       sonner:
         specifier: ^2.0.1
         version: 2.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      tailwind-merge:
+        specifier: ^2.6.0
+        version: 2.6.0
       tailwindcss:
         specifier: ^4.0.12
         version: 4.0.12
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@4.0.12)
       zod:
         specifier: ^3.24.2
         version: 3.24.2
@@ -109,6 +133,9 @@ importers:
       '@eslint/js':
         specifier: ^9.21.0
         version: 9.22.0
+      '@types/node':
+        specifier: ^22.13.10
+        version: 22.13.10
       '@types/react':
         specifier: ^19.0.10
         version: 19.0.10
@@ -117,7 +144,7 @@ importers:
         version: 19.0.4(@types/react@19.0.10)
       '@vitejs/plugin-react-swc':
         specifier: ^3.8.0
-        version: 3.8.0(vite@6.2.1(@types/node@20.12.12)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2))
+        version: 3.8.0(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2))
       eslint:
         specifier: ^9.21.0
         version: 9.22.0(jiti@2.4.2)
@@ -138,7 +165,7 @@ importers:
         version: 8.26.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.7.3)
       vite:
         specifier: ^6.2.0
-        version: 6.2.1(@types/node@20.12.12)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2)
+        version: 6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2)
 
   packages/eslint-config:
     devDependencies:
@@ -1377,6 +1404,11 @@ packages:
     resolution: {integrity: sha512-JubJ5B2pJ4k4yGxaNLdbjrnk9d/iDz6/q8wOilpIowd6PJPgaxCuHBnBszq7Ce2TyMrywm5r4PnKm6V3iiZF+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@hookform/resolvers@4.1.3':
+    resolution: {integrity: sha512-Jsv6UOWYTrEFJ/01ZrnwVXs7KDvP8XIo115i++5PWvNkNvkrsTfGiLS6w+eJ57CYtUtDQalUWovCZDHFJ8u1VQ==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -1489,6 +1521,50 @@ packages:
   '@pkgr/core@0.1.1':
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+
+  '@radix-ui/react-compose-refs@1.1.1':
+    resolution: {integrity: sha512-Y9VzoRDSJtgFMUCoiZBDVo084VQ5hfpXxVE+NgkdNsjiDBByiImMZKKhxMwCbdHvhlENG6a833CbFkOQvTricw==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@radix-ui/react-label@2.1.2':
+    resolution: {integrity: sha512-zo1uGMTaNlHehDyFQcDZXRJhUPDuukcnHz0/jnrup0JA6qL+AFpAnty+7VKa9esuU5xTblAZzTGYJKSKaBxBhw==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
+  '@radix-ui/react-primitive@2.0.2':
+    resolution: {integrity: sha512-Ec/0d38EIuvDF+GZjcMU/Ze6MxntVJYO/fRlCPhCaVUyPY9WTalHJw54tp9sXeJo3tlShWpy41vQRgLRGOuz+w==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
+  '@radix-ui/react-slot@1.1.2':
+    resolution: {integrity: sha512-YAKxaiGsSQJ38VzKH86/BPRC4rh+b1Jpa+JneA5LRE7skmLPNAyeG8kPJj/oo4STLvlrs8vkf/iYyc3A5stYCQ==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   '@rollup/pluginutils@5.1.0':
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
@@ -1680,6 +1756,9 @@ packages:
   '@sindresorhus/merge-streams@2.3.0':
     resolution: {integrity: sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==}
     engines: {node: '>=18'}
+
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
 
   '@storybook/addon-actions@8.2.6':
     resolution: {integrity: sha512-iCsf3V28/jJ95w2zd8aSvR4denoA2UYV3fpNCTGOURqICyKOG3cyVxvqKp8Hhcwn7trNOsK+HlL6q5gpv56ViA==}
@@ -2117,6 +2196,9 @@ packages:
 
   '@types/node@20.12.12':
     resolution: {integrity: sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==}
+
+  '@types/node@22.13.10':
+    resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -4143,6 +4225,11 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
+  lucide-react@0.479.0:
+    resolution: {integrity: sha512-aBhNnveRhorBOK7uA4gDjgaf+YlHMdMhQ/3cupk6exM10hWlEU+2QtWYOfhXhjAsmdb6LeKR+NZnow4UxRRiTQ==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   magic-string@0.27.0:
     resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
     engines: {node: '>=12'}
@@ -5301,6 +5388,11 @@ packages:
   tailwind-merge@2.6.0:
     resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
 
+  tailwindcss-animate@1.0.7:
+    resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+
   tailwindcss@4.0.12:
     resolution: {integrity: sha512-bT0hJo91FtncsAMSsMzUkoo/iEU0Xs5xgFgVC9XmdM9bw5MhZuQFjPNl6wxAE0SiQF/YTZJa+PndGWYSDtuxAg==}
 
@@ -5553,6 +5645,9 @@ packages:
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   unicode-canonical-property-names-ecmascript@2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==}
@@ -7116,6 +7211,11 @@ snapshots:
       '@eslint/core': 0.12.0
       levn: 0.4.1
 
+  '@hookform/resolvers@4.1.3(react-hook-form@7.54.2(react@19.0.0))':
+    dependencies:
+      '@standard-schema/utils': 0.3.0
+      react-hook-form: 7.54.2(react@19.0.0)
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -7148,13 +7248,13 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@joshwooding/vite-plugin-react-docgen-typescript@0.3.1(typescript@5.5.4)(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.29.2))':
+  '@joshwooding/vite-plugin-react-docgen-typescript@0.3.1(typescript@5.5.4)(vite@5.2.11(@types/node@22.13.10)(lightningcss@1.29.2))':
     dependencies:
       glob: 7.2.3
       glob-promise: 4.2.2(glob@7.2.3)
       magic-string: 0.27.0
       react-docgen-typescript: 2.2.2(typescript@5.5.4)
-      vite: 5.2.11(@types/node@20.12.12)(lightningcss@1.29.2)
+      vite: 5.2.11(@types/node@22.13.10)(lightningcss@1.29.2)
     optionalDependencies:
       typescript: 5.5.4
 
@@ -7246,6 +7346,37 @@ snapshots:
     optional: true
 
   '@pkgr/core@0.1.1': {}
+
+  '@radix-ui/react-compose-refs@1.1.1(@types/react@19.0.10)(react@19.0.0)':
+    dependencies:
+      react: 19.0.0
+    optionalDependencies:
+      '@types/react': 19.0.10
+
+  '@radix-ui/react-label@2.1.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+    optionalDependencies:
+      '@types/react': 19.0.10
+      '@types/react-dom': 19.0.4(@types/react@19.0.10)
+
+  '@radix-ui/react-primitive@2.0.2(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@radix-ui/react-slot': 1.1.2(@types/react@19.0.10)(react@19.0.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+    optionalDependencies:
+      '@types/react': 19.0.10
+      '@types/react-dom': 19.0.4(@types/react@19.0.10)
+
+  '@radix-ui/react-slot@1.1.2(@types/react@19.0.10)(react@19.0.0)':
+    dependencies:
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.0.10)(react@19.0.0)
+      react: 19.0.0
+    optionalDependencies:
+      '@types/react': 19.0.10
 
   '@rollup/pluginutils@5.1.0(rollup@4.35.0)':
     dependencies:
@@ -7364,6 +7495,8 @@ snapshots:
 
   '@sindresorhus/merge-streams@2.3.0': {}
 
+  '@standard-schema/utils@0.3.0': {}
+
   '@storybook/addon-actions@8.2.6(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))':
     dependencies:
       '@storybook/global': 5.0.0
@@ -7478,7 +7611,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@storybook/builder-vite@8.2.6(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.29.2))':
+  '@storybook/builder-vite@8.2.6(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)(vite@5.2.11(@types/node@22.13.10)(lightningcss@1.29.2))':
     dependencies:
       '@storybook/csf-plugin': 8.2.6(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))
       '@types/find-cache-dir': 3.2.1
@@ -7490,7 +7623,7 @@ snapshots:
       magic-string: 0.30.10
       storybook: 8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5))
       ts-dedent: 2.2.0
-      vite: 5.2.11(@types/node@20.12.12)(lightningcss@1.29.2)
+      vite: 5.2.11(@types/node@22.13.10)(lightningcss@1.29.2)
     optionalDependencies:
       typescript: 5.5.4
     transitivePeerDependencies:
@@ -7572,11 +7705,11 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       storybook: 8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5))
 
-  '@storybook/react-vite@8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.35.0)(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.29.2))':
+  '@storybook/react-vite@8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.35.0)(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)(vite@5.2.11(@types/node@22.13.10)(lightningcss@1.29.2))':
     dependencies:
-      '@joshwooding/vite-plugin-react-docgen-typescript': 0.3.1(typescript@5.5.4)(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.29.2))
+      '@joshwooding/vite-plugin-react-docgen-typescript': 0.3.1(typescript@5.5.4)(vite@5.2.11(@types/node@22.13.10)(lightningcss@1.29.2))
       '@rollup/pluginutils': 5.1.0(rollup@4.35.0)
-      '@storybook/builder-vite': 8.2.6(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.29.2))
+      '@storybook/builder-vite': 8.2.6(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)(vite@5.2.11(@types/node@22.13.10)(lightningcss@1.29.2))
       '@storybook/react': 8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5)))(typescript@5.5.4)
       find-up: 5.0.0
       magic-string: 0.30.10
@@ -7586,7 +7719,7 @@ snapshots:
       resolve: 1.22.8
       storybook: 8.2.6(@babel/preset-env@7.24.5(@babel/core@7.24.5))
       tsconfig-paths: 4.2.0
-      vite: 5.2.11(@types/node@20.12.12)(lightningcss@1.29.2)
+      vite: 5.2.11(@types/node@22.13.10)(lightningcss@1.29.2)
     transitivePeerDependencies:
       - '@preact/preset-vite'
       - rollup
@@ -7732,13 +7865,13 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.0.12
       '@tailwindcss/oxide-win32-x64-msvc': 4.0.12
 
-  '@tailwindcss/vite@4.0.12(vite@6.2.1(@types/node@20.12.12)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2))':
+  '@tailwindcss/vite@4.0.12(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2))':
     dependencies:
       '@tailwindcss/node': 4.0.12
       '@tailwindcss/oxide': 4.0.12
       lightningcss: 1.29.2
       tailwindcss: 4.0.12
-      vite: 6.2.1(@types/node@20.12.12)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2)
+      vite: 6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2)
 
   '@tanstack/query-core@5.67.2': {}
 
@@ -7873,6 +8006,10 @@ snapshots:
   '@types/node@20.12.12':
     dependencies:
       undici-types: 5.26.5
+
+  '@types/node@22.13.10':
+    dependencies:
+      undici-types: 6.20.0
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -8159,21 +8296,21 @@ snapshots:
       - jest
       - supports-color
 
-  '@vitejs/plugin-react-swc@3.8.0(vite@6.2.1(@types/node@20.12.12)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2))':
+  '@vitejs/plugin-react-swc@3.8.0(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2))':
     dependencies:
       '@swc/core': 1.11.8
-      vite: 6.2.1(@types/node@20.12.12)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2)
+      vite: 6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2)
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@vitejs/plugin-react@4.2.1(vite@5.2.11(@types/node@20.12.12)(lightningcss@1.29.2))':
+  '@vitejs/plugin-react@4.2.1(vite@5.2.11(@types/node@22.13.10)(lightningcss@1.29.2))':
     dependencies:
       '@babel/core': 7.24.5
       '@babel/plugin-transform-react-jsx-self': 7.24.5(@babel/core@7.24.5)
       '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.11(@types/node@20.12.12)(lightningcss@1.29.2)
+      vite: 5.2.11(@types/node@22.13.10)(lightningcss@1.29.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -10267,6 +10404,10 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
+  lucide-react@0.479.0(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+
   magic-string@0.27.0:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -11748,6 +11889,10 @@ snapshots:
 
   tailwind-merge@2.6.0: {}
 
+  tailwindcss-animate@1.0.7(tailwindcss@4.0.12):
+    dependencies:
+      tailwindcss: 4.0.12
+
   tailwindcss@4.0.12: {}
 
   tapable@2.2.1: {}
@@ -11993,6 +12138,8 @@ snapshots:
 
   undici-types@5.26.5: {}
 
+  undici-types@6.20.0: {}
+
   unicode-canonical-property-names-ecmascript@2.0.0: {}
 
   unicode-match-property-ecmascript@2.0.0:
@@ -12170,23 +12317,23 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite@5.2.11(@types/node@20.12.12)(lightningcss@1.29.2):
+  vite@5.2.11(@types/node@22.13.10)(lightningcss@1.29.2):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.17.2
     optionalDependencies:
-      '@types/node': 20.12.12
+      '@types/node': 22.13.10
       fsevents: 2.3.3
       lightningcss: 1.29.2
 
-  vite@6.2.1(@types/node@20.12.12)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2):
+  vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(yaml@2.4.2):
     dependencies:
       esbuild: 0.25.0
       postcss: 8.5.3
       rollup: 4.35.0
     optionalDependencies:
-      '@types/node': 20.12.12
+      '@types/node': 22.13.10
       fsevents: 2.3.3
       jiti: 2.4.2
       lightningcss: 1.29.2
