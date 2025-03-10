@@ -16,6 +16,12 @@ import { cn } from "@acme/ui/utils";
 
 const Form = FormProvider;
 
+export type FormFields = {
+    name: string;
+    label: string;
+    placeholder: string;
+};
+
 type FormFieldContextValue<
     TFieldValues extends FieldValues = FieldValues,
     TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
