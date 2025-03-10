@@ -12,7 +12,7 @@ type StateProps = {
 
 export const useProductStore = create<StateProps>()(
     persist(
-        (set, get) => ({
+        (set) => ({
             products: MOCK_PRODUCTS,
             addProduct: (product: Product) =>
                 set((state) => ({ products: [...state.products, product] })),
