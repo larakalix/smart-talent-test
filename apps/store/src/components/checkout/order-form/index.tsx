@@ -24,7 +24,8 @@ import { orderFormSchema, OrderFormValues } from "../../../types/order";
 import { CartSummary } from "../../cart/summary";
 
 export const OrderForm = () => {
-    const { countries, isLoading, error, user, onSubmit } = useOrderForm();
+    const { countries, isLoading, error, user, isEmpty, onSubmit } =
+        useOrderForm();
 
     const form = useForm<OrderFormValues>({
         resolver: zodResolver(orderFormSchema),
@@ -124,7 +125,8 @@ export const OrderForm = () => {
                     <CartSummary />
 
                     <Button
-                        className="block rounded-md bg-violet-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-violet-600"
+                        disabled={isEmpty}
+                        className="block rounded-md bg-violet-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-violet-600 disabled:bg-violet-300"
                         onClick={form.handleSubmit(onSubmit)}
                     >
                         Submit Order

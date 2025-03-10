@@ -1,3 +1,4 @@
+import { Currency } from "@acme/ui/components";
 import { useOrderStore } from "../../../stores/order-store";
 
 export const OrderGrid = () => {
@@ -11,19 +12,50 @@ export const OrderGrid = () => {
                     className="p-4 border border-gray-200 rounded-md shadow-sm"
                 >
                     <h2 className="text-lg font-semibold text-gray-800">
-                        Order ID: {order.id} - {order.name} ({order.email})
+                        Order ID: {order.id}
                     </h2>
-                    <p className="text-gray-600">Total: {order.total}</p>
-                    <p className="text-gray-600">
-                        Created At: {order.createdAt}
-                    </p>
 
-                    <ul className="mt-4">
-                        {order.products.map((product) => (
-                            <li key={product.id}>
-                                {product.name} - {product.price}
-                            </li>
-                        ))}
+                    <ul className="w-full flex flex-col items-start">
+                        <li className="w-full flex justify-between">
+                            <span className="font-semibold">Customer</span>
+                            <span>
+                                {order.name} ({order.email})
+                            </span>
+                        </li>
+                        <li className="w-full flex justify-between">
+                            <span className="font-semibold">Address</span>
+                            <span>{order.address}</span>
+                        </li>
+                        <li className="w-full flex justify-between">
+                            <span className="font-semibold">City</span>
+                            <span>{order.country}</span>
+                        </li>
+                        <li className="w-full flex justify-between">
+                            <span className="font-semibold">Date</span>
+                            <span>{order.createdAt}</span>
+                        </li>
+                        <li className="w-full flex justify-between">
+                            <span className="font-semibold">Products</span>
+                            <ul className="mt-4 text-end">
+                                {order.products.map(
+                                    ({ id, name, price, tax, quantity }) => (
+                                        <li key={id}>
+                                            {name} -{" "}
+                                            <Currency
+                                                className="font-bold"
+                                                price={price + tax}
+                                            />{" "}
+                                            (x{quantity})
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        </li>
+
+                        <li className="mt-4 border-t pt-4 w-full flex justify-between">
+                            <span className="font-semibold">Total</span>
+                            <Currency price={order.total} />
+                        </li>
                     </ul>
                 </div>
             ))}

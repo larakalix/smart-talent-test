@@ -71,6 +71,7 @@ export const useOrderForm = () => {
         user,
         countries,
         error,
+        isEmpty: products.length === 0,
         isLoading,
         onSubmit,
     };
