@@ -1,7 +1,5 @@
-import React from "react";
 import { useCartStore } from "../../stores/cart-store";
 import { Currency } from "@acme/ui/components";
-import { NavLink } from "react-router-dom";
 
 export const CartSummary = () => {
     const { getSummary } = useCartStore((state) => state);
@@ -33,15 +31,6 @@ export const CartSummary = () => {
                         </dd>
                     </div>
                 </dl>
-
-                <div className="flex justify-end">
-                    <NavLink
-                        to="/checkout"
-                        className="block rounded-md bg-blue-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-600"
-                    >
-                        Checkout
-                    </NavLink>
-                </div>
             </div>
         </div>
     );

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { CartProductCard } from "../../components/cart/cart-product-card";
 import { CartSummary } from "../../components/cart/summary";
 import { Container } from "../../components/layout/container";
@@ -26,6 +27,15 @@ export const CartPage = () => {
                     </ul>
 
                     <CartSummary />
+
+                    <div className="w-full mt-8 flex justify-end">
+                        <NavLink
+                            to="/checkout"
+                            className="block rounded-md bg-blue-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-600"
+                        >
+                            Checkout
+                        </NavLink>
+                    </div>
                 </div>
             </div>
         </Container>

@@ -1,4 +1,3 @@
-import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoadProvider } from "../../../providers/load-provider";
@@ -21,21 +20,14 @@ import {
     SelectValue,
 } from "../../ui/select";
 import { Button } from "@acme/ui/components";
-
-const orderSchema = z.object({
-    name: z.string().nonempty(),
-    email: z.string().email(),
-    address: z.string().nonempty(),
-    country: z.string().nonempty(),
-});
-
-type FormValues = z.infer<typeof orderSchema>;
+import { orderFormSchema, OrderFormValues } from "../../../types/order";
+import { CartSummary } from "../../cart/summary";
 
 export const OrderForm = () => {
     const { countries, isLoading, error, user, onSubmit } = useOrderForm();
 
-    const form = useForm<FormValues>({
-        resolver: zodResolver(orderSchema),
+    const form = useForm<OrderFormValues>({
+        resolver: zodResolver(orderFormSchema),
         defaultValues: {
             name: user?.name ?? "",
             email: user?.email ?? "",
@@ -61,13 +53,16 @@ export const OrderForm = () => {
     return (
         <LoadProvider isLoading={isLoading} error={error}>
             <Form {...form}>
-                <form className="w-full flex flex-col gap-6">
+                <form
+                    className="w-full flex flex-col gap-6"
+                    onSubmit={form.handleSubmit(onSubmit)}
+                >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {fields.map(({ name, label, placeholder }) => (
                             <FormField
                                 key={`form-field-${name}`}
                                 control={form.control}
-                                name={name as keyof FormValues}
+                                name={name as keyof OrderFormValues}
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel className="capitalize">
@@ -101,10 +96,10 @@ export const OrderForm = () => {
                                             value={field.value}
                                             defaultValue={field.value}
                                         >
-                                            <SelectTrigger className="w-[180px]">
+                                            <SelectTrigger className="w-full">
                                                 <SelectValue
                                                     defaultValue={field.value}
-                                                    placeholder="Theme"
+                                                    placeholder="Select a country"
                                                 />
                                             </SelectTrigger>
                                             <SelectContent>
@@ -125,6 +120,8 @@ export const OrderForm = () => {
                             )}
                         />
                     </div>
+
+                    <CartSummary />
 
                     <Button
                         className="block rounded-md bg-violet-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-violet-600"
