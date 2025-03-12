@@ -42,12 +42,12 @@ La aplicación de E-Commerce permite a los usuarios clientes navegar por el cat�
 
 ### Vercel
 
-- La aplicación está configurada para desplegarse mediante una estrategia de CI/CD.
+-   La aplicación está configurada para desplegarse mediante una estrategia de CI/CD.
 
-- **Escalabilidad y robustez**
-- **Simplicidad y rapidez en el despliegue**
-- **Integración nativa de CI/CD**
-- **Experiencia de desarrollador**
+-   **Escalabilidad y robustez**
+-   **Simplicidad y rapidez en el despliegue**
+-   **Integración nativa de CI/CD**
+-   **Experiencia de desarrollador**
 
 ### Turborepo
 
@@ -58,13 +58,23 @@ El uso de Turborepo simplifica la administración de su sistema de diseño monor
 ### Gestión del estado con Zustand
 
 -   Razón para usar Zustand:
-
     -   Zustand es una librería de gestión de estado ligera y sencilla que permite separar la lógica de estado de la presentación. Esto conduce a un código más limpio, fácil de mantener y con un rendimiento óptimo.
-
 -   Ventajas
     -   Simplicidad: Se reduce el boilerplate y se dispone de una API intuitiva.
     -   Rendimiento: Solo se re-renderizan los componentes que dependen del fragmento de estado modificado.
     -   Claridad: La lógica del estado se centraliza, facilitando su mantenimiento y la realización de pruebas.
+
+### React Query para la obtención de datos
+
+He simulado el fetch de datos para el mock de productos, pretendiendo utilizar un método que podria realizar un fetch a un endpoint, de igual manera, se consume el API de países con React Query para manejar de manera precisa, habilitando la capacidad de manejar un catálogo por caché y evitar refetching innecesario.
+
+-   Gestión de caché automática
+
+-   Sincronización y actualización en segundo plano
+
+-   Manejo simplificado de estados de carga y error
+
+-   Reintentos y refetching inteligente
 
 ## Estructura de Carpetas
 
