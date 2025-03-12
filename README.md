@@ -40,6 +40,15 @@ La aplicación de E-Commerce permite a los usuarios clientes navegar por el cat�
 
 ## Decisiones arquitectónicas
 
+### Vercel
+
+- La aplicación está configurada para desplegarse mediante una estrategia de CI/CD.
+
+- **Escalabilidad y robustez**
+- **Simplicidad y rapidez en el despliegue**
+- **Integración nativa de CI/CD**
+- **Experiencia de desarrollador**
+
 ### Turborepo
 
 [Turborepo](https://turbo.build/repo) es un sistema de compilación de alto rendimiento para bases de código JavaScript y TypeScript. Fue diseñado a partir de los flujos de trabajo utilizados por las grandes organizaciones de ingeniería de software para enviar código a escala. Turborepo abstrae la configuración compleja necesaria para los repositorios mono y proporciona compilaciones rápidas e incrementales con almacenamiento en caché remoto sin configuración.
