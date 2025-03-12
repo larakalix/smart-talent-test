@@ -1,9 +1,11 @@
 import { Currency } from "@acme/ui/components";
-import { useOrderStore } from "../../../stores/order-store";
+import type { Order } from "../../../types/order";
 
-export const OrderGrid = () => {
-    const { orders } = useOrderStore((state) => state);
+type Props = {
+    orders: Order[];
+};
 
+export const OrderGrid = ({ orders }: Props) => {
     return (
         <div className="grid grid-cols-2 gap-4 w-full">
             {orders.map((order) => (

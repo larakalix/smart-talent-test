@@ -14,6 +14,7 @@ export const useHeader = () => {
         [
             "user",
             [
+                { name: "My Orders", path: "/my-orders", id: "my-orders" },
                 { name: "Cart", path: "/cart", id: "cart" },
                 { name: "Checkout", path: "/checkout", id: "checkout" },
             ],

@@ -6,6 +6,7 @@ import { OrdersPage } from "../pages/admin/orders-page";
 import { CartPage } from "../pages/client/cart-page";
 import { CheckoutPage } from "../pages/client/checkout-page";
 import { AuthPage } from "../pages/auth/auth-page";
+import { UserOrderPage } from "../pages/client/orders/user-order-page";
 
 export const RouteProvider = () => {
     return (
@@ -38,6 +39,15 @@ export const RouteProvider = () => {
                         element={
                             <ProtectedRoute requiredRole="user">
                                 <CheckoutPage />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/my-orders"
+                        element={
+                            <ProtectedRoute requiredRole="user">
+                                <UserOrderPage />
                             </ProtectedRoute>
                         }
                     />
