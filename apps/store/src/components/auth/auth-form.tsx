@@ -50,6 +50,8 @@ export const AuthForm = () => {
                 >
                     Login as CLIENT #4
                 </Button>
+
+                <span>Does not exist, will show an error message</span>
             </li>
         </ul>
     );
