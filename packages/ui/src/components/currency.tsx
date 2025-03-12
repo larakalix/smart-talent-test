@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, JSX } from "react";
 
 type Props = ComponentProps<"span"> & {
     price: number;
